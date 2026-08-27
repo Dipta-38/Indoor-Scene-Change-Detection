@@ -2,7 +2,7 @@
 
 > **Object Detection + Change Classification for Indoor Environments**
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![YOLO](https://img.shields.io/badge/YOLO-11s-green)
 ![RT--DETR](https://img.shields.io/badge/RT--DETR-l-blueviolet)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
@@ -25,7 +25,7 @@ The system is designed for robotic and forensic applications where an agent need
 ### Statistics
 | Metric | Value |
 | :--- | :--- |
-| **Total Image Pairs** | 2000+ |
+| **Total Images** | 2000+ |
 | **Object Classes** | 56 |
 | **Change Types** | Add, Delete, Move, Open, Close, ON, OFF |
 | **Room Types** | Bedroom, Kitchen, Dining, Corridor, Drawing |
