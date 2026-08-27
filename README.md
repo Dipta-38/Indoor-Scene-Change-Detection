@@ -16,7 +16,7 @@ This project addresses the task of **indoor scene change detection** using a two
 1. **Object Detection** – YOLO11s and RT-DETR models trained on our custom indoor dataset to detect 56 object classes.
 2. **Change Classification** – A rule-based matching algorithm that compares bounding boxes between Before/After image pairs to classify changes as **Add**, **Delete**, **Move**, **Open**, **Close**, **ON**, **OFF** .
 
-The system is designed for robotic applications where an agent needs to detect and revert changes in indoor environments.
+The system is designed for robotic and forensic applications where an agent needs to detect and revert changes in indoor environments.
 
 ---
 
