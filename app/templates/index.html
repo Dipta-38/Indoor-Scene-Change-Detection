@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scene Shift Studio</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark"></span> Scene Shift Studio</div>
+      <span class="eyebrow">Room intelligence / 01</span>
+    </header>
+
+    <section class="hero">
+      <span class="eyebrow">Compare two moments</span>
+      <h1>See what changed in the room.</h1>
+      <p class="lede">Upload a before and after photo. The analysis compensates for handheld camera movement, then identifies additions, removals, and moved objects.</p>
+    </section>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for m in messages %}<div class="flash">{{ m }}</div>{% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <section class="panel upload-panel">
+      <form action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data">
+        <div class="upload-grid">
+          <div class="file-card">
+            <label for="before_image">Before photo</label>
+            <input type="file" id="before_image" name="before_image" accept="image/*" required>
+          </div>
+          <div class="file-card after">
+            <label for="after_image">After photo</label>
+            <input type="file" id="after_image" name="after_image" accept="image/*" required>
+          </div>
+        </div>
+        <button class="primary-action" type="submit"><span>→</span> Analyze scene change</button>
+      </form>
+
+      <div class="capabilities">
+        <span class="capability">Camera-shift aware</span>
+        <span class="capability">CLAHE preprocessing</span>
+        <span class="capability">Appearance matching</span>
+        <span class="capability">RandomForest classifier</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
