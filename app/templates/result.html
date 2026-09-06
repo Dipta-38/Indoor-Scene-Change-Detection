@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Analysis — Scene Shift Studio</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark"></span> Scene Shift Studio</div>
+      <a class="back" href="{{ url_for('index') }}">New analysis <span>↗</span></a>
+    </header>
+
+    <section class="panel">
+      <div class="result-header">
+        <div>
+          <span class="eyebrow">Analysis complete</span>
+          <h1>Scene change detected.</h1>
+        </div>
+        <span class="eyebrow">Report / 01</span>
+      </div>
+
+      <div class="prediction">
+        <div class="prediction-mark">✓</div>
+        <div class="prediction-copy">
+          <strong>{{ predicted_object }}</strong>
+          <small>Predicted as {{ predicted_change }} using {{ model_used.replace('_',' ') }}</small>
+        </div>
+        <span class="badge {{ predicted_change|lower }}">{{ predicted_change }}</span>
+      </div>
+
+      <div class="image-grid">
+        <figure class="figure">
+          <img src="{{ before_img }}" alt="Before">
+          <figcaption><strong>Before</strong>{{ n_before }} objects detected</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="{{ after_img }}" alt="After">
+          <figcaption><strong>After</strong>{{ n_after }} objects detected</figcaption>
+        </figure>
+      </div>
+
+      <div class="metrics">
+        <h2>Measurement details</h2>
+        <table>
+          <tr><td class="k">Camera-shift residual after alignment</td><td class="v">{{ camera_shift_residual_px }} px</td></tr>
+          <tr><td class="k">Move threshold used</td><td class="v">{{ move_thresh_used }} px</td></tr>
+          {% for k, v in stats.items() %}
+          <tr><td class="k">{{ k }}</td><td class="v">{{ '%.3f'|format(v) if v is number else v }}</td></tr>
+          {% endfor %}
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,9 @@
+flask==3.0.3
+ultralytics==8.3.28
+opencv-python-headless==4.10.0.84
+scipy==1.14.1
+scikit-learn==1.6.1
+numpy==2.2.2
+pillow==10.4.0
+joblib==1.4.2
+pandas==2.2.3
