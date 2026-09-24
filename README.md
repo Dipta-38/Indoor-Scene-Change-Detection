@@ -534,7 +534,6 @@ deploy/
 </tr>
 </table>
 
-> The collaborator avatars are loaded directly from each member's GitHub profile, so the displayed image follows the current GitHub profile picture. Clicking an avatar or name opens that collaborator's GitHub profile.
 
 ---
 
