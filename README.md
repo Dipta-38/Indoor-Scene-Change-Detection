@@ -102,10 +102,29 @@ For the demo pair, the final matcher reports the bottle as a **Move** event with
 The notebook expects a Label Studio-style YOLO export containing:
 
 ```text
-data.zip
-├── images/
-├── labels/
+Dataset Directory Structure
+data/
+│
+├── raw/
+│ ├── images/
+│ └── labels/
+│
+├── preprocessed/
+│ ├── train/
+│ │ ├── images/
+│ │ └── labels/
+│ │
+│ ├── validation/
+│ │ ├── images/
+│ │ └── labels/
+│ │
+│ └── test/
+│ ├── images/
+│ └── labels/
+│
+└── data.yaml
 └── classes.txt
+
 ```
 
 Only **Add**, **Delete**, and **Move** samples are retained for the change-detection experiment. Files are parsed into before/after reference-query pairs using their filename metadata. Invalid or ambiguous pair IDs are excluded before splitting.
@@ -324,17 +343,6 @@ The matrix contains **124 answered test pairs**. The remaining **14 of 138** tes
 
 ---
 
-## Ablation Study
-
-The ablation experiment shows how successive rule improvements affect test performance.
-
-<p align="center">
-  <img src="assets/ablation_test.png" alt="Ablation study for rule-based change classification" width="95%">
-</p>
-
-The recorded progression improves test accuracy from approximately **0.53** for the earlier rule baseline to approximately **0.74** after adding alignment improvements, size-relative movement logic, pixel-change evidence, ghost handling, Move split/merge rules, and the low-confidence fallback. Macro F1 increases from roughly **0.56** to **0.77**.
-
----
 
 ## Multi-Object Event Diagnostics
 
@@ -506,21 +514,21 @@ deploy/
   <sub>2107037</sub>
 </td>
 <td align="center" width="190">
-  <a href="https://github.com/Dipta-38"><img src="https://github.com/Dipta-38.png?size=120" width="95" alt="Dipta Chowdhuri"><br><b>Dipta Chowdhuri</b></a><br>
+  <a href="https://github.com/Dipta-38"><img src="https://github.com/Dipta-38.png?size=120" width="95" alt="Dipta Chowdhury"><br><b>Dipta Chowdhury</b></a><br>
   <sub>2107038</sub>
 </td>
 <td align="center" width="190">
-  <a href="https://github.com/Mehereen-1"><img src="https://github.com/Mehereen-1.png?size=120" width="95" alt="Ayesha Meherin"><br><b>Ayesha Meherin</b></a><br>
+  <a href="https://github.com/Mehereen-1"><img src="https://github.com/Mehereen-1.png?size=120" width="95" alt="Ayesha Mehereen"><br><b>Ayesha Mehereen</b></a><br>
   <sub>2107039</sub>
 </td>
 </tr>
 <tr>
 <td align="center" width="190">
-  <a href="https://github.com/Masum-2107040"><img src="https://github.com/Masum-2107040.png?size=120" width="95" alt="Masum Molla"><br><b>Masum Molla</b></a><br>
+  <a href="https://github.com/Masum-2107040"><img src="https://github.com/Masum-2107040.png?size=120" width="95" alt="Md Masum Molla"><br><b>Md Masum Molla</b></a><br>
   <sub>2107040</sub>
 </td>
 <td align="center" width="190">
-  <a href="https://github.com/Abir-49"><img src="https://github.com/Abir-49.png?size=120" width="95" alt="Abir Mahmud"><br><b>Abir Mahmud</b></a><br>
+  <a href="https://github.com/Abir-49"><img src="https://github.com/Abir-49.png?size=120" width="95" alt="Abir Mahmud Talukdar"><br><b>Abir Mahmud Talukdar</b></a><br>
   <sub>2107049</sub>
 </td>
 <td align="center" width="190">
